@@ -1,0 +1,186 @@
+/* Expense Tracker (React) - plum theme matching the original UI. */
+
+:root {
+  --plum-dark: #3d2c46;
+  --plum: #8e5ea2;
+  --plum-hover: #7c4d90;
+  --bg: #f6f1f8;
+  --panel: #ffffff;
+  --panel-soft: #faf7fc;
+  --text: #2b2135;
+  --muted: #7a6d85;
+  --danger: #b3373f;
+  --green: #2e7d4f;
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+h1, h2, h3 { margin: 0 0 0.5rem; }
+
+/* ---------- buttons & forms ---------- */
+.btn {
+  border: 1px solid #d8cbe2;
+  background: var(--panel);
+  color: var(--text);
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.btn:hover { background: var(--panel-soft); }
+.btn:disabled { opacity: 0.45; cursor: default; }
+
+.btn-primary { background: var(--plum); border-color: var(--plum); color: #fff; }
+.btn-primary:hover { background: var(--plum-hover); }
+
+.btn-ghost { background: transparent; color: #fdf9ff; border: 1px solid #fdf9ff; }
+.btn-ghost:hover { background: rgba(255, 255, 255, 0.12); }
+
+.btn-small { padding: 0.25rem 0.55rem; font-size: 0.8rem; }
+.btn-danger { color: var(--danger); border-color: #e3b7bb; }
+
+label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.7rem; }
+input, select, textarea {
+  display: block;
+  width: 100%;
+  margin-top: 0.3rem;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid #d8cbe2;
+  border-radius: 8px;
+  font: inherit;
+  background: #fff;
+}
+
+.error {
+  background: #fdeeee;
+  border: 1px solid #e3b7bb;
+  color: var(--danger);
+  padding: 0.55rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+.empty { color: var(--muted); font-size: 0.9rem; }
+
+/* ---------- navbar ---------- */
+.navbar { background: var(--plum-dark); color: #fdf9ff; }
+.navbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand { font-size: 1.25rem; font-weight: 700; letter-spacing: 0.02em; }
+.navbar-user { display: flex; align-items: center; gap: 0.8rem; }
+.navbar-name { font-size: 0.9rem; opacity: 0.9; }
+
+/* ---------- layout ---------- */
+.page { max-width: 1200px; margin: 0 auto; padding: 1.2rem 1rem 2.5rem; }
+.page-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.page-head-actions { display: flex; align-items: flex-end; gap: 0.8rem; flex-wrap: wrap; }
+.filter { margin-bottom: 0; }
+
+.panel {
+  background: var(--panel);
+  border: 1px solid #e6dcef;
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+}
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.grid-2 .panel { margin: 0; }
+
+/* ---------- auth pages ---------- */
+.auth-page { display: flex; justify-content: center; padding: 3rem 1rem; }
+.auth-card {
+  background: var(--panel);
+  border: 1px solid #e6dcef;
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  width: 100%;
+  max-width: 400px;
+}
+.auth-sub { color: var(--muted); margin-top: -0.3rem; }
+.auth-card .btn-primary { width: 100%; margin-top: 0.4rem; }
+.auth-switch { font-size: 0.9rem; margin-top: 1rem; text-align: center; }
+.auth-switch a { color: var(--plum); font-weight: 600; }
+
+/* ---------- summary cards ---------- */
+.cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1rem; }
+.card {
+  background: var(--panel);
+  border: 1px solid #e6dcef;
+  border-radius: var(--radius);
+  padding: 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.card-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.card strong { font-size: 1.3rem; }
+.income { color: var(--green); }
+.expense { color: var(--danger); }
+
+/* ---------- form ---------- */
+.form-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8rem; }
+.form-actions { display: flex; gap: 0.6rem; margin-top: 0.4rem; }
+
+/* ---------- entries table ---------- */
+.entries { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+.entries th, .entries td { text-align: left; padding: 0.5rem 0.6rem; border-bottom: 1px solid #eee5f4; }
+.entries th { color: var(--muted); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.entries .num { text-align: right; font-variant-numeric: tabular-nums; }
+.row-actions { white-space: nowrap; text-align: right; }
+.row-actions .btn + .btn { margin-left: 0.35rem; }
+
+.badge {
+  font-size: 0.72rem;
+  text-transform: capitalize;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: #efe6f5;
+  color: var(--plum-dark);
+}
+
+/* ---------- charts ---------- */
+.bar-chart { display: flex; flex-direction: column; gap: 0.5rem; }
+.bar-row { display: grid; grid-template-columns: 90px 1fr 90px; align-items: center; gap: 0.6rem; font-size: 0.85rem; }
+.bar-label { text-transform: capitalize; color: var(--muted); }
+.bar-track { background: #f0e8f5; border-radius: 999px; height: 14px; overflow: hidden; }
+.bar-fill { background: var(--plum); height: 100%; border-radius: 999px; }
+.bar-value { text-align: right; font-variant-numeric: tabular-nums; }
+
+.vchart { display: flex; align-items: flex-end; gap: 1rem; height: 170px; padding-top: 0.5rem; }
+.vchart-group { display: flex; flex-direction: column; align-items: center; gap: 0.4rem; height: 100%; justify-content: flex-end; }
+.vchart-bars { display: flex; align-items: flex-end; gap: 4px; height: 130px; }
+.vbar { width: 16px; border-radius: 4px 4px 0 0; min-height: 2px; }
+.vbar.income { background: var(--green); }
+.vbar.expense { background: var(--danger); }
+.vchart-label { font-size: 0.75rem; color: var(--muted); white-space: nowrap; }
+.legend { font-size: 0.8rem; color: var(--muted); margin: 0.6rem 0 0; }
+.dot { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin: 0 0.3rem 0 0.8rem; }
+.dot.income { background: var(--green); }
+.dot.expense { background: var(--danger); }
+
+/* ---------- responsive ---------- */
+@media (max-width: 860px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .grid-2 { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr 1fr; }
+  .entries { font-size: 0.85rem; }
+}
